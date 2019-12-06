@@ -14,15 +14,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -44,36 +36,36 @@ public class TodoController {
         List<PriorityDto> priorities=priorityService.findAll();
         model.addAttribute("priorities",priorities);
         return "add-todo";
-     }
+    }
 
-     @GetMapping("list")
-     public String showTodos(Model model){
+    @GetMapping("list")
+    public String showTodos(Model model){
         List<TodoListDto> listOfTodo = new ArrayList<>();
         List<Todo> todos = todoDao.findAll();
-           for(Todo todo: todos){
-               TodoListDto todoList = new TodoListDto();
-               todoList.setId(todo.getId());
-               todoList.setTitle(todo.getTitle());
+        for(Todo todo: todos){
+            TodoListDto todoList = new TodoListDto();
+            todoList.setId(todo.getId());
+            todoList.setTitle(todo.getTitle());
 
-               listOfTodo.add(todoList);
-           }
+            listOfTodo.add(todoList);
+        }
         model.addAttribute("todos",listOfTodo);
         return "show-details";
-     }
+    }
 
-     @PostMapping("add")
-     public String addTodo(@Valid Todo todo, BindingResult result, Model model){
+    @PostMapping("add")
+    public String addTodo(@Valid Todo todo, BindingResult result, Model model){
         if(result.hasErrors())
             return "add-todo";
         todoDao.save(todo);
         return "redirect:list";
-     }
-     @GetMapping("update/{id}")
-     public String showUpdateForm(@PathVariable("id") long id, Model model){
+    }
+    @GetMapping("update/{id}")
+    public String showUpdateForm(@PathVariable("id") long id, Model model){
         Todo todo =todoDao.findById(id);
-          model.addAttribute("todo",todo);
-          return "update-todo";
-     }
+        model.addAttribute("todo",todo);
+        return "update-todo";
+    }
 
     @GetMapping("details/{id}")
     @ResponseBody
@@ -98,6 +90,15 @@ public class TodoController {
         todoDto.setPriority(todo.getPriority().getId());
         todoDto.setPriorityDtoList(listOfPriorities);
         return todoDto;
+    }
+
+    @PostMapping("update-todo/{id}")
+    public @ResponseBody String updateTodo(@PathVariable("id") long id, @RequestBody TodoDto model){
+        Todo todo =todoDao.findById(id);
+        todo.setTitle(model.getTitle());
+        todo.setNote(model.getNote());
+        todoDao.save(todo);
+        return "Todo edited successfully";
     }
 
     @GetMapping("delete/{id}")
