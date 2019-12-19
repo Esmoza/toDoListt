@@ -37,7 +37,8 @@
                     <div class="row">
                         <div class="col-10">
                             <i class="fas fa-check" style="font-size: 45px;text-align: left;"></i>
-                            <h2 class="leftpart" th:text="${todo.title}" style="text-align: right"></h2>
+                            <input class="isChecked" type="checkbox" th:data-id="${todo.id}">
+                             <h2 class="leftpart" th:text="${todo.title}" style="text-align: right"></h2>
                         </div>
 
                         <div class="col-2">
@@ -85,6 +86,31 @@ $(function(){
 </script>
 -->
 <script>
+
+    $(document).ready(function () {
+        $('.isChecked').on('change',function () {
+
+            var todoId = $(this).attr("data-id");
+
+
+            $.ajax({
+                url: 'update',
+                data: { 'id' : todoId },
+                type: "post",
+                cache: false,
+                success: function () {
+                    alert("Suceeded!");
+
+                },
+                error: function (e) {
+                    alert('Failed!: ' + e);
+                }
+            });
+        });
+    });
+
+</script>
+<script>
     function showDetails(id){
         console.log(id);
         var html = "";
@@ -98,14 +124,9 @@ $(function(){
                 console.log(result);
 
                 html = "<div class='modal-content'><span class='close'>&times;</span> " +
-                        "<h2 class='leftpart' th:text='${todo.title}'></h2>"+
                     "<h2><a href='#'>" + result.title +"</a></h2><p class='lead'>"+ result.note +"</p>" +
-                    "<div class='formatButton'><a href='/todo/delete/"+result.id+"'><button class='detailsButton'>  <i class=\"fa fa-remove\"></i>Delete</button></a>"
-                    +"<a href='/todo/update/"+result.id+"'><button class='detailsButton'>Edit</button></a>" +
-                    " <a href='/todo/update/"+result.id+"' class='btn btn-primary a-btn-slide-text'>\n" +
-                    "        <span class='glyphicon glyphicon-edit' aria-hidden='true'></span>\n" +
-                    "        <span><strong>Edit</strong></span>\n" +
-                    "    </a><div></div>";
+                    "<div class='formatButton'><a href='/todo/update/"+result.id+"'><button class='btn btn-warning detailsButtonEdit'>Edit</button></a>" +
+                    "<a href='/todo/delete/"+result.id+"'><button class='btn btn-danger detailsButtonDelete'>  <i class='fa fa-remove'></i>Delete</button></a><div></div>";
 
                 // html ="<div class='modal-content'><span class='close'>&times;</span>" +
                 //     "<form method='POST' id='update-todo-form'>" +

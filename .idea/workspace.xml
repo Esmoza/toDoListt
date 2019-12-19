@@ -1,44 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8eca1694-52c2-41a9-a645-8b93afd414d1" name="Default Changelist" comment="some changes">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="8eca1694-52c2-41a9-a645-8b93afd414d1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/controller/TodoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/controller/TodoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/dao/TodoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/dao/TodoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Label.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Priority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Priority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Todo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Todo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/service/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/service/TodoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1_0_01__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1_0_01__init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/dto/TodoListDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/dto/TodoListDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-todo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-todo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/show-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/show-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/show-todos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/show-todos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/update-todo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/update-todo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/toDoList.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/controller/TodoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/controller/TodoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/dao/TodoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/dao/TodoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Label.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Label.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Priority.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Priority.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Todo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Todo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/service/TodoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/service/TodoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V1_0_01__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/migration/V1_0_01__init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/dto/TodoListDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/dto/TodoListDto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/add-todo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/add-todo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/show-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/show-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/show-todos.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/show-todos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/update-todo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/update-todo.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +154,7 @@
       <workItem from="1575640503494" duration="2188000" />
       <workItem from="1575648521839" duration="771000" />
       <workItem from="1575878576513" duration="3281000" />
-      <workItem from="1576590738413" duration="30926000" />
+      <workItem from="1576590738413" duration="34811000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1575044430998</created>
@@ -207,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575647655864</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="some changes">
+      <created>1576771839489</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1576771839489</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
