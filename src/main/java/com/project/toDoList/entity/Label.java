@@ -6,11 +6,12 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name ="label")
+@Table(name ="labels")
 public class Label {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name ="label_id")
     private Long id;
     private String name;
     private String slug;

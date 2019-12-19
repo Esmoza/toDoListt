@@ -2,8 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8eca1694-52c2-41a9-a645-8b93afd414d1" name="Default Changelist" comment="some changes">
-      <change afterPath="$PROJECT_DIR$/some_changes.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/controller/TodoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/controller/TodoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/dao/TodoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/dao/TodoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Label.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Priority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Priority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Todo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/Todo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/toDoList/service/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/toDoList/service/TodoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1_0_01__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1_0_01__init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-todo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-todo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/show-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/show-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/show-todos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/show-todos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/update-todo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/update-todo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/toDoList.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/controller/TodoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/controller/TodoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/dao/TodoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/dao/TodoDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Label.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Label.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Priority.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Priority.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Todo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/Todo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/toDoList/service/TodoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/toDoList/service/TodoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V1_0_01__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/migration/V1_0_01__init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/add-todo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/add-todo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/show-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/show-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/show-todos.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/show-todos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/update-todo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/update-todo.html" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,10 +93,11 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mini-blog" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -78,6 +116,18 @@
       <recent name="C:\Users\Twin\todoList\src\main\resources" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="Spring Boot.ToDoListApplication">
     <configuration name="DEV Profile" type="Application" factoryName="Application">
       <envs>
@@ -92,6 +142,9 @@
     <configuration name="ToDoListApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="toDoList" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.toDoList.ToDoListApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateTriggerFile" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateResources" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -100,18 +153,6 @@
       <item itemvalue="Application.DEV Profile" />
       <item itemvalue="Spring Boot.ToDoListApplication" />
     </list>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -141,6 +182,9 @@
       <workItem from="1575576147584" duration="3331000" />
       <workItem from="1575623583873" duration="15803000" />
       <workItem from="1575640503494" duration="2188000" />
+      <workItem from="1575648521839" duration="771000" />
+      <workItem from="1575878576513" duration="3281000" />
+      <workItem from="1576590738413" duration="30926000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1575044430998</created>
@@ -291,5 +335,47 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="441" y="156" width="700" height="530" key="recent.locations.popup/0.0.1600.860@0.0.1600.860" timestamp="1575634098473" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/toDoList/controller/TodoController.java</url>
+          <line>71</line>
+          <properties class="com.project.toDoList.controller.TodoController" method="addTodo">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/toDoList/controller/TodoController.java</url>
+          <line>88</line>
+          <properties class="com.project.toDoList.controller.TodoController" method="updateCategory">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/toDoList/controller/TodoController.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/toDoList/controller/TodoController.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/toDoList/controller/TodoController.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/project/toDoList/controller/TodoController.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

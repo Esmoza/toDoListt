@@ -2,6 +2,7 @@ package com.project.toDoList.service;
 
 import com.project.toDoList.dao.TodoDao;
 import com.project.toDoList.dto.TodoDto;
+import com.project.toDoList.entity.Todo;
 import com.project.toDoList.mapper.TodoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,8 +22,7 @@ public class TodoService {
         return todoMapper.mapToDtoList(todoDao.findAll());
     }
 
-    public void save(TodoDto todoDto){
-      todoDao.save(todoDto);
-        todoMapper.mapToEntity(todoDto);
+    public void save(Todo todo){
+        todoDao.saveAndFlush(todo);
     }
 }

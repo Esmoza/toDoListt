@@ -8,10 +8,14 @@ body {
 }
 
 a {
+    text-decoration-color: white !important;
     color: #92badd;
     display:inline-block;
-    text-decoration: none;
+    text-decoration: none !important;
     font-weight: 400;
+}
+.lead {
+    margin: 50px;
 }
 
 h2 {
@@ -367,4 +371,38 @@ input[type=password]:placeholder {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+.formatButton{
+    margin-left: 40px;
+    display: inline;
+    text-align: center;
+    text-decoration-color: white !important;
+}
+
+.detailsButton{
+    width: 120px;
+    background-color: #008CBA;
+    border: none;
+    text-decoration-color: white !important;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 15px;
+    cursor: pointer;
+}
+
+a.btn:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+a.btn {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
 }

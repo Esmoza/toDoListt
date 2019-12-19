@@ -2,6 +2,7 @@ package com.project.toDoList.entity;
 
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -9,7 +10,7 @@ import java.util.Set;
 
 
 @Entity
-@Table(name="todo")
+@Table(name="todos")
 public class Todo {
 
     @Id
@@ -17,17 +18,29 @@ public class Todo {
     @Column(name="todo_id")
     private Long id;
     private String title;
+    @DateTimeFormat(pattern = "yyyy-dd-MM")
     @Column(name="due_date")
     private Date dueDate;
     private String note;
-
-    @ManyToOne
-    @JoinColumn(name="label_id")
+    @Column(name="checkf")
+    private boolean checkf;
+    @ManyToOne(
+            fetch = FetchType.LAZY
+    )
+    @JoinColumn(name = "label_id")
     private Label label;
 
     @ManyToOne
     @JoinColumn(name="priority_id")
     private Priority priority;
+
+    public boolean isCheck() {
+        return checkf;
+    }
+
+    public void setCheck(boolean checkf) {
+        this.checkf = checkf;
+    }
 
     public Long getId() {
         return id;
@@ -36,7 +49,6 @@ public class Todo {
     public void setId(Long id) {
         this.id = id;
     }
-
 
     public String getTitle() {
         return title;

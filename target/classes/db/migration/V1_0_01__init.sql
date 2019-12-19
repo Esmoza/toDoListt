@@ -5,7 +5,7 @@ lastname varchar(50) NOT NULL,
 email varchar (50) NOT NULL,
 username varchar(100) NOT NULL,
 password varchar(100) NOT NULL,
-active int NOT NULL,
+checkf bit ,
 PRIMARY KEY(user_id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -50,11 +50,11 @@ create table todo (
     UNIQUE  KEY UK_title (title),
     KEY FK_Todo_ID (priority_id),
     CONSTRAINT FK_TODO
-    FOREIGN KEY (priority_id)
+    FOREIGN KEY (id)
     REFERENCES priority (id),
     KEY FK_Todoo_ID (label_id),
     CONSTRAINT FK_TODOO
-    FOREIGN KEY (label_id)
+    FOREIGN KEY (id)
     REFERENCES label (id)
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 

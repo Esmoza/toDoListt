@@ -5,6 +5,12 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head th:insert="fragments.html :: headerfiles"></head>
+<script>
+    $( function() {
+        $( "#sortable" ).sortable();
+        $( "#sortable" ).disableSelection();
+    } );
+</script>
 <body>
 <header th:insert="fragments.html :: nav"></header>
 <div class="container my-2" >
@@ -24,43 +30,46 @@
         </div>
     </div>
 
-                            <div th:each="todo : ${todos}">
-                                <div class="card article" th:id="'article-' + ${todo.id}" th:data-id="${todo.id}">
-                                    <div class="row">
-                                        <div class="col-10">
-                                    <h2 class="leftpart"><a href="singlepost.html"th:text="${todo.title}"></a></h2>
-                                        </div>
+    <div id="sortable">
+    <div th:each="todo : ${todos}">
 
-                                        <div class="col-2">
-<!--                                            <img src="/img/new.png" id="listicon" alt="List Icon" />-->
-                                            <a class="add-icon" th:data-id="${todo.id}" th:onclick="|showDetails(${todo.id})|" title="Todo Details"><i class="far fa-list-alt" style="font-size: 35px;text-align: right;margin-bottom: 10px;"></i></a>
-                                        </div>
-                                    </div>
+                <div class="card article" th:id="'article-' + ${todo.id}" th:data-id="${todo.id}">
+                    <div class="row">
+                        <div class="col-10">
+                            <i class="fas fa-check" style="font-size: 45px;text-align: left;"></i>
+                            <h2 class="leftpart" th:text="${todo.title}" style="text-align: right"></h2>
+                        </div>
 
-                                </div>
-                            </div>
+                        <div class="col-2">
+                            <!--                                            <img src="/img/new.png" id="listicon" alt="List Icon" />-->
+                            <a class="add-icon" th:data-id="${todo.id}" th:onclick="|showDetails(${todo.id})|" title="Todo Details"><i class="far fa-list-alt" style="font-size: 35px;text-align: right;margin-bottom: 10px;"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            <div>
+            </div>
 
 
-<!--                                    <div class="modal-content">-->
-<!--                                        <span class="close">&times;</span>-->
-<!--                                        <h2><a href="singlepost.html"th:text="${todo.title}"></a></h2>-->
-<!--                                    <p class="lead" th:text="${todo.note}"></p>-->
-<!--                                    <p class="lead" th:text="${todo.dueDate}"></p>-->
-<!--                                        <button id="buttonEdit" type="submit" class="btn btn-primary subbuton">Edit</button>-->
-<!--                                        <button id="buttonDelete" type="submit" class="btn btn-primary subbuton">Delete</button>-->
+    <!--                                    <div class="modal-content">-->
+    <!--                                        <span class="close">&times;</span>-->
+    <!--                                        <h2><a href="singlepost.html"th:text="${todo.title}"></a></h2>-->
+    <!--                                    <p class="lead" th:text="${todo.note}"></p>-->
+    <!--                                    <p class="lead" th:text="${todo.dueDate}"></p>-->
+    <!--                                        <button id="buttonEdit" type="submit" class="btn btn-primary subbuton">Edit</button>-->
+    <!--                                        <button id="buttonDelete" type="submit" class="btn btn-primary subbuton">Delete</button>-->
 
-<!--                                    </div>-->
-<!--                                </div>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
 
-                                </article>
-                                    <div id="my-modal" class="modal"></div>
+    <div id="my-modal" class="modal"></div>
 
 
     <div>
     </div>
 </div>
-        </div>
-    </div>
+</div>
+</div>
 </div>
 
 </body>
@@ -88,41 +97,57 @@ $(function(){
             success: function (result) {
                 console.log(result);
 
-                // html = "<div class='modal-content'><span class='close'>&times;</span> " +
-                //     "<h2><a href='#'>" + result.title +"</a></h2><p class='lead'>"+ result.note +"</p>" +
-                //     "<a href='/todo/delete/"+result.id+"'>Delete</a>"
-                //     +"<a href='/todo/delete/"+result.id+"'></a></div>";
+                html = "<div class='modal-content'><span class='close'>&times;</span> " +
+                        "<h2 class='leftpart' th:text='${todo.title}'></h2>"+
+                    "<h2><a href='#'>" + result.title +"</a></h2><p class='lead'>"+ result.note +"</p>" +
+                    "<div class='formatButton'><a href='/todo/delete/"+result.id+"'><button class='detailsButton'>  <i class=\"fa fa-remove\"></i>Delete</button></a>"
+                    +"<a href='/todo/update/"+result.id+"'><button class='detailsButton'>Edit</button></a>" +
+                    " <a href='/todo/update/"+result.id+"' class='btn btn-primary a-btn-slide-text'>\n" +
+                    "        <span class='glyphicon glyphicon-edit' aria-hidden='true'></span>\n" +
+                    "        <span><strong>Edit</strong></span>\n" +
+                    "    </a><div></div>";
 
-                html ="<div class='modal-content'><span class='close'>&times;</span>" +
-                    "<form th:action='@{/todo/update/{id}(id=${todo.id})'th:object='${todo}' method='POST'>" +
-                    "<div class='row'>" +
-                    "<div class='form-group col-md-8'>" +
-                    "<label for='title' class='col-form-label'>Title</label> " +
-                    "<input type='text' th:field='*{title}' class='form-control' id='title' placeholder='Title' value='"+result.title+"'> " +
-                    "<span th:if='${#fields.hasErrors('title')}' th:errors='*{title}' class='text-danger'></span>" +
-                    "</div>" +
-                    "<div class='form-group col-md-8'>" +
-                    "<label for='note' class='col-form-label'>Note</label> " +
-                    "<input type='text' th:field='*{note}' class='form-control' id='note' placeholder='note' value='"+result.note +"'> " +
-                    "<span th:if='${#fields.hasErrors('note')}' th:errors='*{note}' class='text-danger'></span>" +
-                    "</div>" +
-                    "<div class='form-group col-md-8'>" +
-                    "<label for='dueDate' class='col-form-label'>dueDate</label> " +
-                    "<input type='text' autocomplete='off' th:field='*{dueDate}' class='form-control' id='dueDate' placeholder='dueDate' value='"+result.dueDate +"'>" +
-                    "</div>" +
-                    "<div class='form-group col-md-8'>" +
-                    "<select class='form-control'  id='dropPriorities' th:field='"+ result.priority +"'>" +
-                    "<option value='0'>select priority</option>" +
-                    "<option th:each='"+priorityy +":"+ result.priorityDtoList +"' th:value='"+ priorityy.id +"' th:text='"+ priorityy.name +"'></option>" +
-                    "</select>" +
-                    "</div>" +
-                    "<div class='col-md-6'>" +
-                    "<input type='submit' class='btn btn-primary' value='Update Todo'>" +
-                    "</div>" +
-                    "</div>" +
-                    "</form></div>";
+                // html ="<div class='modal-content'><span class='close'>&times;</span>" +
+                //     "<form method='POST' id='update-todo-form'>" +
+                //     "<div class='row'>" +
+                //     "<div class='form-group col-md-8'>" +
+                //     "<label for='title' class='col-form-label'>Title</label> " +
+                //     "<input type='text' class='form-control' id='title' placeholder='Title' value='"+result.title+"'> " +
+                //
+                //     "</div>" +
+                //     "<div class='form-group col-md-8'>" +
+                //     "<label for='note' class='col-form-label'>Note</label> " +
+                //     "<input type='text' class='form-control' id='note' placeholder='note' value='"+result.note +"'> " +
+                //
+                //     "</div>" +
+                //     "<div class='form-group col-md-8'>" +
+                //     "<label for='dueDate' class='col-form-label'>dueDate</label> " +
+                //     "<input type='text' autocomplete='off' class='form-control' id='dueDate' placeholder='dueDate' value='"+result.dueDate +"'>" +
+                //     "</div>" +
+                //     "<div class='form-group col-md-8'>" +
+                //     "<select class='form-control'  id='dropPriorities'>" +
+                //     "<option value='0'>select priority</option>" +
+                //
+                //     "</select>" +
+                //     "</div>" +
+                //     "<div class='col-md-6'>" +
+                //     "<button  class='btn btn-primary' id='update-todo' data-id='"+result.id+"'>Update Todo</button>" +
+                //     "</div>" +
+                //     "</div>" +
+                //     "</form></div>";
 
                 $("#my-modal").append(html);
+
+                $.each( result.priorityDtoList , function( key, obj) {
+                    var option ="";
+                    if(obj.id == result.priority){
+                        option = "<option value='"+ obj.id +"' selected>"+ obj.name +"</option>"
+                    }else{
+                        option = "<option value='"+ obj.id +"'>"+ obj.name +"</option>"
+                    }
+
+                    $("#dropPriorities").append(option);
+                });
                 $("#my-modal").css("display","block");
             },
             error: function (e) {
@@ -139,29 +164,38 @@ $(function(){
     });
 </script>
 
-<!--
+
 <script type="text/javascript">
-    $(document).ready(function () {
-        $('#buttonEdit').click(function () {
+    $(document).on("click","#update-todo",function () {
+        var id = $(this).attr("data-id");
+        var title =$("#title").val();
+        var note=$("#note").val();
+        var dueDate =$("#dueDate").val();
+        var priority = "";
+        $.ajax({
+            url:'update-todo/'+ id,
+            data: {
+                'title':title,
+                'note':note,
+                'dueDate':dueDate,
+                'priority':1,
 
-            $.ajax({
-                url:'todo/update/${id}'+$(this).parents("[data-id]").attr("data-id"),
-                data: {'data-id': id},
-                type: "get",
-                cache: false,
-                success: function () {
-                    location.reload();
+            },
+            type: "POST",
+            success: function (result) {
+                console.log(result);
+                window.reload();
+            },
+            error: function (e) {
+                alert('hellooo!: ' + e);
+            }
+        })
 
-                },
-                error: function (e) {
-                    alert('Failed!: ' + e);
-                }
-            })
-
-        });
     });
 
+
 </script>
+<!--
 <script type="text/javascript">
     $(document).ready(function () {
         $('#save').on('select',function () {
@@ -185,7 +219,12 @@ $(function(){
 
 </script>
 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+<!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+<!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<!--<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>-->
 <footer th:insert="fragments.html :: footer"></footer>
 </html>

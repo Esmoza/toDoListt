@@ -26,10 +26,18 @@ public class TodoController {
     @Autowired
     public TodoDao todoDao;
     @Autowired
+    public  TodoService todoService;
+
+    @Autowired
     public PriorityDao priorityDao;
 
     @Autowired
     public PriorityService priorityService;
+
+    @GetMapping("profile")
+    public String profile(){
+        return "profile";
+    }
 
     @GetMapping("form")
     public String showForm(Todo todo, Priority priority,Model model){
@@ -37,7 +45,14 @@ public class TodoController {
         model.addAttribute("priorities",priorities);
         return "add-todo";
     }
+    /*
+    @GetMapping("list")
+    public String findAll(Model model) {
+        model.addAttribute("todos", todoDao.findAll());
 
+        return "show-details";
+    }
+*/
     @GetMapping("list")
     public String showTodos(Model model){
         List<TodoListDto> listOfTodo = new ArrayList<>();
@@ -57,14 +72,30 @@ public class TodoController {
     public String addTodo(@Valid Todo todo, BindingResult result, Model model){
         if(result.hasErrors())
             return "add-todo";
-        todoDao.save(todo);
+        todoService.save(todo);
         return "redirect:list";
     }
+
     @GetMapping("update/{id}")
-    public String showUpdateForm(@PathVariable("id") long id, Model model){
+    public String showUpdateForm(@PathVariable("id") long id, Model model,Priority priority){
         Todo todo =todoDao.findById(id);
+        List<PriorityDto> priorities=priorityService.findAll();
+        model.addAttribute("priorities",priorities);
         model.addAttribute("todo",todo);
         return "update-todo";
+    }
+
+    @PostMapping("update/{id}")
+    public String updateCategory(@PathVariable("id") long id, @Valid Todo todo, BindingResult result,
+                                 Model model) {
+        if (result.hasErrors()) {
+            todo.setId(id);
+            return "update-todo";
+        }
+
+        todoService.save(todo);
+        model.addAttribute("todo", todoService.findAll());
+        return "redirect:/todo/list";
     }
 
     @GetMapping("details/{id}")
@@ -100,6 +131,7 @@ public class TodoController {
         todoDao.save(todo);
         return "Todo edited successfully";
     }
+
 
     @GetMapping("delete/{id}")
     public String deleteTodo(@PathVariable("id") long id, Model model) {

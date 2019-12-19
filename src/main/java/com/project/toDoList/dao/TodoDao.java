@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TodoDao extends JpaRepository<Todo, TodoDto> {
 
-     void save(TodoDto todoDto);
-       Todo findById(long id);
+//     Todo save(Todo todo);
+      Todo findById(long id);
 }
