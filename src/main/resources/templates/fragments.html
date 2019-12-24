@@ -33,7 +33,7 @@
 
     <script src="https://cdn.ckeditor.com/ckeditor5/15.0.0/classic/ckeditor.js"></script>
     <script src="http://SortableJS.github.io/Sortable/Sortable.js"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
+
 
 </head>
 <body>
@@ -56,7 +56,7 @@
                             <li class="list"><a href="/todo/list">Show Articles</a></li>
                         </sec:authorize>
                         <li class="list" sec:authorize="isAuthenticated()">
-                            <a href="#" th:href="@{/todo/profile}">Profile</a>
+                            <a href="#"  th:href="@{'/update/' + ${#authentication.name}}">Profile</a>
                         </li>
                   <!--      <div th:switch="${role.}">
                         <li th:case="'admin'" sec:authorize="isAuthenticated()" class="nav-item">
@@ -66,12 +66,6 @@
                                 <a class="nav-link" href="#" th:href="@{/admin/categories/list}">Category</a>
                             </li>
                         </div> -->
-                        <li class="list" sec:authorize="hasAuthority('LIST_CATEGORIES')">
-                            <a href="#" th:href="@{/admin/categories/list}">Category</a>
-                        </li>
-                        <li class="list" sec:authorize="isAuthenticated()">
-                            <a href="#" th:href="@{/admin/categories/form}">Category</a>
-                        </li>
                     </ul>
                 </div>
                 <div class="col-md-6" id="second">

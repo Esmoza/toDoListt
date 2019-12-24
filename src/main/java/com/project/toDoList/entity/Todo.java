@@ -1,12 +1,18 @@
 package com.project.toDoList.entity;
 
-
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import java.util.Date;
-import java.util.Set;
 
 
 @Entity
@@ -22,8 +28,9 @@ public class Todo {
     @Column(name="due_date")
     private Date dueDate;
     private String note;
-    @Column(name="checkf")
-    private boolean checkf;
+    @Column(name="is_done")
+    private boolean isDone=false;
+    @JsonIgnore
     @ManyToOne(
             fetch = FetchType.LAZY
     )
@@ -34,12 +41,12 @@ public class Todo {
     @JoinColumn(name="priority_id")
     private Priority priority;
 
-    public boolean isCheck() {
-        return checkf;
+    public boolean getIsDone() {
+        return isDone;
     }
 
-    public void setCheck(boolean checkf) {
-        this.checkf = checkf;
+    public void setDone(boolean done) {
+        isDone = done;
     }
 
     public Long getId() {

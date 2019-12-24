@@ -5,7 +5,7 @@ lastname varchar(50) NOT NULL,
 email varchar (50) NOT NULL,
 username varchar(100) NOT NULL,
 password varchar(100) NOT NULL,
-checkf bit ,
+is_done bit ,
 PRIMARY KEY(user_id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

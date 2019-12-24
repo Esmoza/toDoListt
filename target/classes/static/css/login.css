@@ -34,10 +34,7 @@ h2 {
     margin-right: 20px;
 }
 .leftpart{
-    margin-top: 10px;
-    float: left;
-    position: center;
-    margin-left: 35px;
+    margin-top: 9px;
 }
 #listicon{
     float: right;
@@ -164,7 +161,6 @@ input[type=text] {
     display: inline-block;
     font-size: 16px;
     margin: 5px;
-    width: 85%;
     border: 2px solid #f6f6f6;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -373,6 +369,8 @@ input[type=password]:placeholder {
     cursor: pointer;
 }
 .formatButton{
+    margin-bottom: 20px;
+    margin-top: 60px;
     margin-left: 40px !important;
     display: inline;
     text-align: center;
@@ -418,3 +416,9 @@ a.btn {
     -o-transition-duration: 0.5s;
 }
 
+.checkButton{
+    margin-left: 15px;
+    margin-top: 20px;
+    width: 28px;
+    height: 28px;
+}

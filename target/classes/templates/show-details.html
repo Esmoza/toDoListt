@@ -35,10 +35,11 @@
 
                 <div class="card article" th:id="'article-' + ${todo.id}" th:data-id="${todo.id}">
                     <div class="row">
-                        <div class="col-10">
-                            <i class="fas fa-check" style="font-size: 45px;text-align: left;"></i>
-                            <input class="isChecked" type="checkbox" th:data-id="${todo.id}">
-                             <h2 class="leftpart" th:text="${todo.title}" style="text-align: right"></h2>
+                        <div class="col-10 inputGroup">
+                            <input class="isDone checkButton"  type="checkbox" th:data-id="${todo.id}" th:checked="${todo.isDone}">
+
+                             <h2 class="leftpart" th:text="${todo.title}"></h2>
+
                         </div>
 
                         <div class="col-2">
@@ -55,7 +56,7 @@
     <!--                                    <div class="modal-content">-->
     <!--                                        <span class="close">&times;</span>-->
     <!--                                        <h2><a href="singlepost.html"th:text="${todo.title}"></a></h2>-->
-    <!--                                    <p class="lead" th:text="${todo.note}"></p>-->
+    <!--                                    <p class="lead"    style=" margin-left: 50px;"th:text="${todo.note}"></p>-->
     <!--                                    <p class="lead" th:text="${todo.dueDate}"></p>-->
     <!--                                        <button id="buttonEdit" type="submit" class="btn btn-primary subbuton">Edit</button>-->
     <!--                                        <button id="buttonDelete" type="submit" class="btn btn-primary subbuton">Delete</button>-->
@@ -74,36 +75,27 @@
 </div>
 
 </body>
-<!--
-<script>
-$(function(){
-    $('#readmore').click(function(){
-        $('#body').animate({height:'100%'});
-        $(this).hide();
-        return false;
-    });
-});
-</script>
--->
+
+
 <script>
 
     $(document).ready(function () {
-        $('.isChecked').on('change',function () {
+        $('.isDone').on('change',function () {
 
             var todoId = $(this).attr("data-id");
-
-
+            var isDone =$(this).is(':checked');
+            console.log(isDone);
             $.ajax({
-                url: 'update',
-                data: { 'id' : todoId },
+                url: '/update/done/'+todoId,
+                data:{'id':todoId, 'isDone':isDone},
                 type: "post",
                 cache: false,
                 success: function () {
-                    alert("Suceeded!");
+                    location.reload();
 
                 },
                 error: function (e) {
-                    alert('Failed!: ' + e);
+                    console.log('Failed!: ' + e.message);
                 }
             });
         });
@@ -125,7 +117,7 @@ $(function(){
 
                 html = "<div class='modal-content'><span class='close'>&times;</span> " +
                     "<h2><a href='#'>" + result.title +"</a></h2><p class='lead'>"+ result.note +"</p>" +
-                    "<div class='formatButton'><a href='/todo/update/"+result.id+"'><button class='btn btn-warning detailsButtonEdit'>Edit</button></a>" +
+                    "<div class='formatButton' style='margin-left: 50px;margin-left: 20px'><a href='/todo/update/"+result.id+"'><button class='btn btn-warning detailsButtonEdit'>Edit</button></a>" +
                     "<a href='/todo/delete/"+result.id+"'><button class='btn btn-danger detailsButtonDelete'>  <i class='fa fa-remove'></i>Delete</button></a><div></div>";
 
                 // html ="<div class='modal-content'><span class='close'>&times;</span>" +
@@ -240,12 +232,6 @@ $(function(){
 
 </script>
 -->
-<!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
-<!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
 
-
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-<!--<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>-->
 <footer th:insert="fragments.html :: footer"></footer>
 </html>

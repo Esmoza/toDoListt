@@ -6,6 +6,8 @@ public class TodoListDto {
 
     private String note;
 
+    private boolean isDone;
+
     public String getNote() {
         return note;
     }
@@ -28,5 +30,13 @@ public class TodoListDto {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public boolean getIsDone() {
+        return isDone;
+    }
+
+    public void setDone(boolean done) {
+        isDone = done;
     }
 }

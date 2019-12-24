@@ -1,20 +1,23 @@
 package com.project.toDoList.controller;
 
+import com.project.toDoList.entity.*;
 import com.project.toDoList.dao.PriorityDao;
 import com.project.toDoList.dao.TodoDao;
 import com.project.toDoList.dto.PriorityDto;
 import com.project.toDoList.dto.TodoDto;
 import com.project.toDoList.dto.TodoListDto;
-import com.project.toDoList.entity.Priority;
-import com.project.toDoList.entity.Todo;
 import com.project.toDoList.service.PriorityService;
 import com.project.toDoList.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -26,7 +29,7 @@ public class TodoController {
     @Autowired
     public TodoDao todoDao;
     @Autowired
-    public  TodoService todoService;
+    public TodoService todoService;
 
     @Autowired
     public PriorityDao priorityDao;
@@ -34,13 +37,8 @@ public class TodoController {
     @Autowired
     public PriorityService priorityService;
 
-    @GetMapping("profile")
-    public String profile(){
-        return "profile";
-    }
-
     @GetMapping("form")
-    public String showForm(Todo todo, Priority priority,Model model){
+    public String showForm(Todo todo, Priority priority, Model model){
         List<PriorityDto> priorities=priorityService.findAll();
         model.addAttribute("priorities",priorities);
         return "add-todo";
@@ -53,6 +51,7 @@ public class TodoController {
         return "show-details";
     }
 */
+
     @GetMapping("list")
     public String showTodos(Model model){
         List<TodoListDto> listOfTodo = new ArrayList<>();
@@ -61,6 +60,7 @@ public class TodoController {
             TodoListDto todoList = new TodoListDto();
             todoList.setId(todo.getId());
             todoList.setTitle(todo.getTitle());
+            todoList.setDone(todo.getIsDone());
 
             listOfTodo.add(todoList);
         }
@@ -77,7 +77,7 @@ public class TodoController {
     }
 
     @GetMapping("update/{id}")
-    public String showUpdateForm(@PathVariable("id") long id, Model model,Priority priority){
+    public String showUpdateForm(@PathVariable("id") long id, Model model, Priority priority){
         Todo todo =todoDao.findById(id);
         List<PriorityDto> priorities=priorityService.findAll();
         model.addAttribute("priorities",priorities);
@@ -86,7 +86,7 @@ public class TodoController {
     }
 
     @PostMapping("update/{id}")
-    public String updateCategory(@PathVariable("id") long id, @Valid Todo todo, BindingResult result,
+    public String updateTodo(@PathVariable("id") long id, @Valid Todo todo, BindingResult result,
                                  Model model) {
         if (result.hasErrors()) {
             todo.setId(id);
@@ -138,7 +138,7 @@ public class TodoController {
         Todo todo = todoDao.findById(id);
         todoDao.delete(todo);
         model.addAttribute("todo", todoDao.findAll());
-        return "show-details";
+        return "redirect:/todo/list";
     }
 
 
