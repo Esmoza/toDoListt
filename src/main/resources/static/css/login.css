@@ -190,7 +190,7 @@ input[type=password] {
     display: inline-block;
     font-size: 16px;
     margin: 5px;
-    width: 85%;
+    /*width: 85%;*/
     border: 2px solid #f6f6f6;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -421,4 +421,11 @@ a.btn {
     margin-top: 20px;
     width: 28px;
     height: 28px;
+}
+
+#leftLink{
+    color: #fefefe;
+    font-size: 16px;
+    font-style: normal;
+
 }

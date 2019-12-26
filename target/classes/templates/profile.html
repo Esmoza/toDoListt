@@ -10,96 +10,82 @@
 <hr>
 <div class="container bootstrap snippet">
     <div class="row">
-        <div class="col-sm-10"><h1 th:object="${user}" th:text="${user.firstname}"></h1></div>
+        <div><h1 style="margin-top: 25px">User Settings</h1></div>
     </div>
-    <div class="row">
-        <div class="col-sm-3"><!--left col-->
+    <div class="wrapper">
+        <!--
+        <div class="column">
             <div class="text-center">
                 <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-                <h6>Upload a different photo...</h6>
-                <input type="file" class="text-center center-block file-upload">
+                <div class=""><h1 th:object="${user}" th:text="${user.firstname}"></h1></div>
+                <div>
+                    <input type="file" class="text-center center-block file-upload">
+                </div>
             </div></hr><br>
 
 
-            <div class="panel panel-default">
+            <div class="panel panel-default text-center">
                 <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
                 <div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>
             </div>
 
-        </div><!--/col-3-->
+        </div>
+               -->
 
             <div class="tab-content">
                 <div class="tab-pane active" id="home">
                     <form th:action="@{/update/{username}(username=${user.username})}" th:object="${user}" method="POST">
-                        <div class="row">
-                        <div class="form-group">
+                        <div class="custom-row">
 
-                            <div class="col-xs-6">
+                            <div class="custom-col">
                                 <label for="firstname">First name</label>
                                 <input type="text" class="form-control" th:field="*{firstname}" id="firstname" placeholder="first name" title="enter your first name if any.">
                             </div>
-                        </div>
-                        <div class="form-group">
 
-                            <div class="col-xs-6">
+                            <div class="custom-col">
                                 <label for="last_name">Last name</label>
                                 <input type="text" class="form-control" th:field="*{lastname}" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
                             </div>
-                        </div>
-                        </div>
-                        <div class="row">
-                        <div class="form-group">
 
-                            <div class="col-xs-6">
+                            <div class="custom-col">
                                 <label for="phone">Phone</label>
                                 <input type="text" class="form-control" th:field="*{phoneNumber}" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
                             </div>
-                        </div>
-                            <div class="form-group">
 
-                                <div class="col-xs-6">
+                                <div class="custom-col">
                                     <label for="location">Location</label>
                                     <input type="text" class="form-control"  th:field="*{location}"id="location" placeholder="somewhere" title="enter a location">
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group">
 
-                                <div class="col-xs-6">
+                                <div class="custom-col">
                                     <label for="email">Email</label>
                                     <input type="email" class="form-control" th:field="*{email}" id="email" placeholder="you@email.com" title="enter your email.">
                                 </div>
-                            </div>
-                            <div class="form-group">
 
-                                <div class="col-xs-6">
+                                <div class="custom-col">
                                     <label for="username">Username</label>
                                     <input type="text" class="form-control" disabled id="username" placeholder="user name" title="enter your user name if any.">
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                        <div class="form-group">
 
-                            <div class="col-xs-6">
+                            <div class="custom-col">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
                             </div>
+
                         </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-xs-12">
-                                <br>
-                                <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
-                            </div>
+                        <div class="button-wrapper">
+                            <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                            <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            <a href="/index" class="btn btn-lg btn-secondary">Cancel</a>
+
                         </div>
                     </form>
             </div>
         </div><!--/tab-content-->
 
     </div><!--/col-9-->
+
+
 </div><!--/row-->
 
 </body>

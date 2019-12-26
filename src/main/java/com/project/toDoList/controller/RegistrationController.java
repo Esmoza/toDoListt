@@ -59,7 +59,7 @@ public class RegistrationController {
         User user1 = null;
         if (user.isPresent()) {
             user1 = user.get();
-            // System.out.println(user1.getEmail());
+             System.out.println(user1.getEmail());
         }
         model.addAttribute("user", user1);
         model.addAttribute("user", userService.findByUserName(username));
@@ -88,9 +88,4 @@ public class RegistrationController {
         userDao.save(user1);
         return "profile";
     }
-
-
-
-
-
 }
